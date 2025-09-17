@@ -4,7 +4,7 @@ export function Greeting() {
   const [input, setInput] = useState("")
 
   return(
-    <form className="flex items-center gap-2 w-full max-w-md p-3 border rounded-xl">
+    <form className="flex items-center gap-2 w-full max-w-3xl p-3 border rounded-xl">
     <input
      className="flex-1 min-w-0 bg-transparent outline-none focus:ring-2 focus:ring-blue-500"
      value={input}
