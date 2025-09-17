@@ -1,5 +1,13 @@
 # aiDesk
-AI-powered helpdesk chatbot (React + Tailwind + shadcn/ui, Express, Prisma, PostgreSQL).
+AI-powered helpdesk chatbot 
+
+## Technologies
+- React 
+- Tailwind 
+- shadcn/ui 
+- Express 
+- Prisma
+- PostgreSQL
 
 ## Features (MVP)
 - Auth (email/password)
