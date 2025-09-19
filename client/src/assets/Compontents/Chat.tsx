@@ -18,10 +18,21 @@ export function Chat() {
   return(
     <>
     <div className="m-20 whitespace-pre-wrap flex items-center w-full max-w-3xl mb-3 space-y-2 font-mono bg-gray-50">
-      {messages.map(m => (
-        <div key={m.id}><h1>{m.content}</h1></div>
-      ))}
+      {messages.map(m => {
+      const isUser = m.role === "user" // ✅ declare inside the map function body
+      const rowClass = isUser ? "justify-end" : "justify-start"
+      const bubbleClass = isUser
+      ? "bg-gray-600 text-white"
+      : "bg-zinc-100 text-zinc-900"
+        return (<div key={m.id} className={`flex ${rowClass}`}>
+          <div className={`max-w-[75%] px-4 py-2 rounded-2xl shadow ${bubbleClass}`}>
+            {m.content}
+          </div>
+        </div>
+        )
+      })}
     </div>
+    
     <form onSubmit={onSubmit} className="flex items-center gap-2 w-full max-w-3xl p-3 border rounded-xl">
     <input
      className="flex-1 min-w-0 bg-transparent outline-none"
