@@ -19,7 +19,7 @@ export function Chat() {
     <>
     <div className="m-20 whitespace-pre-wrap flex items-center w-full max-w-3xl mb-3 space-y-2 font-mono bg-gray-50">
       {messages.map(m => {
-      const isUser = m.role === "user" // ✅ declare inside the map function body
+      const isUser = m.role === "user"
       const rowClass = isUser ? "justify-end" : "justify-start"
       const bubbleClass = isUser
       ? "bg-gray-600 text-white"
