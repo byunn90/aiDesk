@@ -1,5 +1,5 @@
 # aiDesk
-AI-powered helpdesk chatbot 🧙‍♂️🤖
+AI-powered helpdesk chatbot 🧙‍♂️🤖🤖
 
 ## Technologies
 - React 
