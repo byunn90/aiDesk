@@ -1,64 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react"
 
 export function NavBar() {
-  const [open, setOpen] = useState(false);
+ const [open, setOpen] = useState(false);
+  
+  // function OpenClose() {
+    
+  // }
+
+//  useEffect(() => {
+//   if (!open) return;
+  
+//  })
 
   return (
-    <>
-      {/* Nav */}
-      <nav className="flex justify-between items-center px-6 py-4 bg-white shadow">
-        <div>
-          <h1 className="font-bold text-xl">aiDesk</h1>
-        </div>
-        <ul className="flex gap-6">
-          <li className="cursor-pointer hover:text-blue-500">Dashboard</li>
-          <li className="cursor-pointer hover:text-blue-500">Projects</li>
-          <li
-            className="cursor-pointer hover:text-blue-500"
-            onClick={() => setOpen(true)}
-          >
-            Settings
-          </li>
-        </ul>
-        <button className="rounded-md px-4 py-2 text-white bg-green-500 hover:bg-green-600">
-          Login
-        </button>
-      </nav>
+        <nav className="flex justify-between items-center px-6 py-4 bg-white shadow">
+  <div> {/* Left section: brand/logo */}
+    <h1>aiDesk</h1>
+  </div>
+  <div> {/* Center or right section: nav links */}
+    <ul className="flex gap-6">
+      <li>Dashboard</li>
+      <li>Projects</li>
+      <li onClick={() => setOpen(true)}>Settings</li>
+    </ul>
+     {open && (
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40">
+    <div className="rounded-lg bg-white p-6 shadow-xl">
+    <h2 className="text-lg font-semibold">Welcome to settings for Ai desk 🤖</h2>
+  </div>
+</div>
+  )}
+  </div>
+  {/* Settings Open Overlay */}
+ 
+  <div> {/* Right section: user/auth */}
+    <button className="bg-[rbg(34,197,94)] bg:hover">Login</button>
+  </div>
+</nav>
 
-      {/* Overlay Popup */}
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity duration-300"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="relative rounded-2xl bg-white p-8 shadow-2xl w-[400px] animate-fadeIn"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-3 right-3 rounded-full p-2 hover:bg-gray-100"
-              aria-label="Close"
-            >
-              ✕
-            </button>
-
-            {/* Content */}
-            <h2 className="text-xl font-bold mb-4 text-center">
-              AiDesk Settings 🤖
-            </h2>
-            <p className="text-gray-600 mb-4 text-center">
-              Here are your quick setup instructions:
-            </p>
-            <ul className="list-decimal list-inside space-y-2 text-gray-700">
-              <li>Follow step one</li>
-              <li>Follow step two</li>
-              <li>Follow step three</li>
-            </ul>
-          </div>
-        </div>
-      )}
-    </>
-  );
+    )
 }
