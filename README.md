@@ -2,7 +2,7 @@
 AI-powered helpdesk chatbot 🧙‍♂️🤖🤖🧙
 
 ## Technologies
-- React 
+- React (with Vite )
 - Tailwind 
 - shadcn/ui 
 - Express 
