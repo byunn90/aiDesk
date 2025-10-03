@@ -1,5 +1,13 @@
+import { useState } from "react"
+
 export function NavBar() {
-    return (
+ const [open, setOpen] = useState(false);
+  
+  function OpenClose() {
+    
+  }
+
+  return (
         <nav className="flex justify-between items-center px-6 py-4 bg-white shadow">
   <div> {/* Left section: brand/logo */}
     <h1>aiDesk</h1>
@@ -8,7 +16,7 @@ export function NavBar() {
     <ul className="flex gap-6">
       <li>Dashboard</li>
       <li>Projects</li>
-      <li>Settings</li>
+      <li onClick={() => setOpen(true)}>Settings</li>
     </ul>
   </div>
   <div> {/* Right section: user/auth */}
