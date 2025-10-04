@@ -1,5 +1,14 @@
+# never commit dependencies
+node_modules
+server/node_modules
+
+# never commit secrets
+.env
+server/.env
+
+# never commit build outputs
 dist
 build
-npm-debug.log
-server/.env
-server/node_modules
+
+# never commit logs
+*.log
