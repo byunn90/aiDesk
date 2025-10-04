@@ -1,14 +1,18 @@
-# never commit dependencies
+# dependencies
 node_modules
+client/node_modules
 server/node_modules
 
-# never commit secrets
+# secrets
 .env
+client/.env
 server/.env
 
-# never commit build outputs
+# builds
 dist
 build
+client/dist
+server/dist
 
-# never commit logs
+# logs
 *.log
