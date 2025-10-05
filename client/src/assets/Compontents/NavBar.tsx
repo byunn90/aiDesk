@@ -5,6 +5,23 @@ import logo from "../../images/AI-desk image.png"
 export function NavBar() {
   const [open, setOpen] = useState(false);
 
+
+  function openModal() {
+    setOpen(true)
+  };
+
+  function closeModal() {
+    setOpen(false)
+  };
+
+  function handleBackdropClick() {
+    closeModal();
+  };
+
+   function stopClick(e: React.MouseEvent) {
+    e.stopPropagation();
+  }
+
   return (
     <>
 <nav className="flex justify-between items-center px-6 py-4 bg-gray-200 shadow font-inherit">
@@ -16,7 +33,7 @@ export function NavBar() {
     <li className="relative cursor-pointer hover:text-indigo-400">Dashboard</li>
     <li className="relative cursor-pointer hover:text-indigo-400">Projects</li>
     <li
-      onClick={() => setOpen(true)}
+      onClick={openModal}
       className="relative cursor-pointer hover:text-indigo-400"
     >
       Settings
@@ -41,7 +58,7 @@ export function NavBar() {
       aria-modal="true"
     >
       <button
-        onClick={() => setOpen(false)}
+        onClick={closeModal}
         className="absolute right-3 top-3 text-slate-500 hover:text-slate-900"
         aria-label="Close"
       >
