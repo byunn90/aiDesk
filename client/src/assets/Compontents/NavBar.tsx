@@ -6,6 +6,19 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
 
 
+useEffect(() => {
+  if (!open) return;
+  function onKey(e: KeyboardEvent) {
+    if (e.key === "Escape") closeModal()
+  }
+  window.addEventListener("keydown", onKey);
+
+  return () => window.removeEventListener("keydown", onKey)
+})
+
+
+
+
   function openModal() {
     setOpen(true)
   };
@@ -15,7 +28,7 @@ export function NavBar() {
   };
 
   function handleBackdropClick() {
-    closeModal();
+     closeModal();
   };
 
    function stopClick(e: React.MouseEvent) {
@@ -49,11 +62,11 @@ export function NavBar() {
 {open && (
   <div
     className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm"
-    onClick={() => setOpen(false)}
+      onClick={handleBackdropClick}
   >
     <div
       className="relative w-full max-w-md rounded-lg bg-white p-6 shadow-2xl"
-      onClick={(e) => e.stopPropagation()}
+      onClick={stopClick}
       role="dialog"
       aria-modal="true"
     >
