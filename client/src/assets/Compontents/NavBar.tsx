@@ -7,7 +7,7 @@ export function NavBar() {
 
   return (
     <>
-<nav className="flex justify-between items-center px-6 py-4 bg-gray-200 shadow">
+<nav className="flex justify-between items-center px-6 py-4 bg-gray-200 shadow font-inherit">
   <div className="flex items-center gap-2">
     <img className="h-10 w-10 object-contain" src={logo} alt="Ai-Desk" />
 
@@ -23,7 +23,7 @@ export function NavBar() {
     </li>
   </ul>
 
-  <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-md">
+  <button className="hover:bg-indigo-700 text-white px-3 py-1 rounded-md font-inherit">
     Login
   </button>
 </nav>
