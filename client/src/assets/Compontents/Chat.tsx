@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+// import { DarkMode } from "./DarkModeSwitch";  // Not in use right now still building
 
 export function Chat() {
   const [input, setInput] = useState("")

@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../images/AI-desk image.png"
 
 export function NavBar() {
@@ -15,9 +15,6 @@ useEffect(() => {
 
   return () => window.removeEventListener("keydown", onKey)
 })
-
-
-
 
   function openModal() {
     setOpen(true)
@@ -100,6 +97,7 @@ useEffect(() => {
         >
           Got it
         </button>
+        <button>dark mode</button>
       </div>
     </div>
   </div>
