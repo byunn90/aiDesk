@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import logo from "../../images/AI-desk image.png"
+import { DarkMode } from "./DarkModeSwitch";
 
 export function NavBar() {
   const [open, setOpen] = useState(false);
@@ -49,7 +50,7 @@ useEffect(() => {
       Settings
     </li>
   </ul>
-
+   <DarkMode />
   <button className="hover:bg-indigo-700 text-white px-3 py-1 rounded-md font-inherit">
     Login
   </button>
@@ -97,8 +98,8 @@ useEffect(() => {
         >
           Got it
         </button>
-        <button>dark mode</button>
       </div>
+      <DarkMode/>
     </div>
   </div>
 )}

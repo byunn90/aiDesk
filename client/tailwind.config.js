@@ -4,5 +4,6 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: 'class', // ✅ no quotes around key
   plugins: [require("tailwindcss-animate")],
 };
